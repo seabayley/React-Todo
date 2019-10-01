@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
+import Icon from '@material-ui/core/Icon';
+
+import TaskDialog from './TaskDialog';
 
 function TodoForm(props) {
+    const [openDialog, setOpenDialog] = useState(false);
+
+    const toggleTaskDialogOpen = () => {
+        setOpenDialog(openDialog ? false : true)
+    }
 
     return (
         <div className="todo_form">
-            <FormControl >
-                <TextField label='Enter new task' margin='normal' variant='filled' required='true' onFocus={e => e.target.value = ''} onChange={props.handleInputChange} />
-                <Button onClick={e => props.handleSubmitClick(e)} variant='contained' color='primary' type="submit">Add Task</Button>
-                <Button variant='contained' color='primary' onClick={props.handleSaveTasks}> Save Tasks </Button>
-                <Button variant='contained' color='secondary' onClick={props.handleClearCompleted}> Clear Completed </Button>
-                <Button variant='contained' color='secondary' onClick={props.handleClearAll}> Clear All </Button>
-            </FormControl>
+            <Button variant='contained'
+                color='primary'
+                onClick={toggleTaskDialogOpen}>
+                <Icon>add</Icon>New Task
+            </Button>
+            <TaskDialog open={openDialog} onClose={toggleTaskDialogOpen} saveTask={props.handleCreateTask} />
         </div>
     );
 }

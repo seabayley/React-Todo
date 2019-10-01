@@ -1,26 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo|Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 body {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #63ccca;
+    background-color: skyblue;
     text-align: center;
 }
 
 header {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Nunito', sans-serif;
     font-size: 2rem;
 }
 
 .todo {
-    color: #35393c;
-    font-family: 'Baloo', cursive;
+
 }
 .todo_wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 25%;
 }
 
 .todo-completed {
     text-decoration: line-through;
+}
+
+.task_dialog {
+    padding: 20px;
+}
+
+.todo_panel {
+    width: 100%;
+    color: #35393c;
+    margin-bottom: 10px;
 }
