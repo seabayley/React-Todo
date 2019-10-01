@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo|Fredoka+One&display=swap');
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #63ccca;
+    text-align: center;
+}
+
+header {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+}
+
+.todo {
+    color: #35393c;
+    font-family: 'Baloo', cursive;
+}
+.todo_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-completed {
+    text-decoration: line-through;
+}
